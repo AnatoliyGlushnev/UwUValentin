@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet"/>
+    <title>Валентинка</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Будешь моей валентинкой??</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media1.tenor.com/m/GMq4cs21SZAAAAAC/peach-goma.gif">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Да</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Нет</button>
+            <script>
+                function nextPage() {
+                    window.location.href = "yes.html";
+                }
+
+
+                const myList = ["Ты уверена? :С", "А если подумать?", "Ну, Лина...", "Хватит, за что ты так... :с", "Я тебя люблю, а ты вот так..."];
+
+                function moveButton() {
+                    var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                    var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                    document.getElementById('noButton').style.left = `${x}px`;
+                    document.getElementById('noButton').style.top = `${y}px`;
+                    document.getElementById('noButton').textContent = myList[Math.floor(Math.random() * myList.length)];
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
